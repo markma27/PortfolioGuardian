@@ -37,20 +37,17 @@
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <button class="lg:hidden" @click="mobileMenuOpen = !mobileMenuOpen; console.log('Menu clicked:', mobileMenuOpen)">
+                <button class="lg:hidden" id="menuButton">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path :class="{'hidden': mobileMenuOpen, 'inline-flex': !mobileMenuOpen }" stroke-linecap="round" 
-                              stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        <<path :class="{'hidden': !mobileMenuOpen, 'inline-flex': mobileMenuOpen }" stroke-linecap="round" 
-                              stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
                 </button>
             </nav>
         </div>
 
         <!-- Mobile Navigation -->
-        <div class="lg:hidden mobile-menu" x-cloak x-show="mobileMenuOpen">
-            <div class="px-4 py-5 space-y-4 bg-white shadow-lg" x-show="mobileMenuOpen">
+        <div class="lg:hidden mobile-menu hidden" id="mobileMenu">
+            <div class="px-4 py-5 space-y-4 bg-white shadow-lg">
                 <a href="index.html" class="block nav-link">Home</a>
                 <a href="services.html" class="block nav-link">Services</a>
                 <a href="team.html" class="block nav-link">Our Team</a>
@@ -286,5 +283,13 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script>
+        const menuButton = document.getElementById('menuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html> 
