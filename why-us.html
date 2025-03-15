@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Choose Us - PortfolioGuardian</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="min-h-screen bg-white" x-data="{ mobileMenuOpen: false }">
+    <header class="fixed w-full bg-white shadow-md transition-all duration-300 z-50" 
+            :class="{ 'bg-opacity-95 backdrop-blur-sm': window.pageYOffset > 0 }">
+        <div class="container mx-auto px-4 py-4">
+            <nav class="flex items-center justify-between">
+                <div class="text-2xl font-heading font-bold text-primary">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="PortfolioGuardian Logo" class="h-16">
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="services.html" class="nav-link">Services</a>
+                    <a href="team.html" class="nav-link">Our Team</a>
+                    <a href="why-us.html" class="nav-link active">Why Us</a>
+                    <a href="faq.html" class="nav-link">FAQ</a>
+                    <a href="contact.html" class="nav-link">Contact Us</a>
+                    <a href="#" class="btn-primary">Client Login</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden" @click="mobileMenuOpen = !mobileMenuOpen">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path :class="{'hidden': mobileMenuOpen, 'inline-flex': !mobileMenuOpen }" stroke-linecap="round" 
+                              stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        <path :class="{'hidden': !mobileMenuOpen, 'inline-flex': mobileMenuOpen }" stroke-linecap="round" 
+                              stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </nav>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div class="lg:hidden mobile-menu" x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-200"
+             x-transition:enter-start="opacity-0 -translate-y-4" x-transition:enter-end="opacity-100 translate-y-0"
+             x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0"
+             x-transition:leave-end="opacity-0 -translate-y-4" @click.away="mobileMenuOpen = false">
+            <div class="px-4 py-5 space-y-4 bg-white shadow-lg">
+                <a href="index.html" class="block nav-link">Home</a>
+                <a href="services.html" class="block nav-link">Services</a>
+                <a href="team.html" class="block nav-link">Our Team</a>
+                <a href="why-us.html" class="block nav-link active">Why Us</a>
+                <a href="faq.html" class="block nav-link">FAQ</a>
+                <a href="contact.html" class="block nav-link">Contact Us</a>
+                <a href="#" class="block btn-primary text-center">Client Login</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="pt-32 flex items-center justify-center min-h-[50vh] bg-cover bg-center" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/banner.jpg');">
+        <div class="container mx-auto px-4 text-center py-20 fade-in">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-white">Why Choose PortfolioGuardian</h1>
+            <div class="w-24 h-1 bg-white mx-auto mb-8"></div>
+            <p class="text-xl max-w-3xl mx-auto text-white">Discover what sets us apart in investment administration</p>
+        </div>
+    </section>
+
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center mb-16 fade-in">
+                <h2 class="text-3xl font-bold mb-6">Our Unique Approach</h2>
+                <p class="text-gray-700">At PortfolioGuardian, we believe investment administration should be simple, transparent, and tailored to your needs. Our approach combines expertise, technology, and personalized service to deliver an exceptional experience.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Advantage 1 -->
+                <div class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl fade-in">
+                    <div class="text-4xl text-primary mb-6">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Independent & Unbiased</h3>
+                    <p class="text-gray-700">As an independent provider, we offer truly unbiased administration services without conflicts of interest. We don't sell products or receive commissions, ensuring our advice is always in your best interest.</p>
+                </div>
+                
+                <!-- Advantage 2 -->
+                <div class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl fade-in fade-in-delay-1">
+                    <div class="text-4xl text-primary mb-6">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Fixed Fee Structure</h3>
+                    <p class="text-gray-700">Our transparent fixed fee structure means you know exactly what you're paying, regardless of portfolio value. No hidden costs, no surprises – just predictable, fair pricing.</p>
+                </div>
+                
+                <!-- Advantage 3 -->
+                <div class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl fade-in fade-in-delay-2">
+                    <div class="text-4xl text-primary mb-6">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Personalized Service</h3>
+                    <p class="text-gray-700">You'll work directly with experienced professionals who understand your needs. We take the time to build relationships and provide a level of service that larger institutions simply can't match.</p>
+                </div>
+                
+                <!-- Advantage 4 -->
+                <div class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl fade-in fade-in-delay-3">
+                    <div class="text-4xl text-primary mb-6">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Advanced Technology</h3>
+                    <p class="text-gray-700">Our proprietary systems combine with best-in-class software to deliver accurate, timely reporting and insights. We invest in technology so you benefit from efficient, error-free administration.</p>
+                </div>
+                
+                <!-- Advantage 5 -->
+                <div class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl fade-in fade-in-delay-4">
+                    <div class="text-4xl text-primary mb-6">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Compliance Expertise</h3>
+                    <p class="text-gray-700">Stay ahead of regulatory requirements with our deep knowledge of compliance obligations. We ensure your investments are administered according to the latest regulations and best practices.</p>
+                </div>
+                
+                <!-- Advantage 6 -->
+                <div class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl fade-in fade-in-delay-5">
+                    <div class="text-4xl text-primary mb-6">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Platform Flexibility</h3>
+                    <p class="text-gray-700">We can work with any investment platform or custodian, giving you complete freedom to choose the best solutions for your needs without compromising on administration quality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-light">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">Client Testimonials</h2>
+                    <div class="space-y-8">
+                        <div class="bg-white p-6 rounded-xl shadow-md">
+                            <div class="flex items-center mb-4">
+                                <div class="text-primary">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 italic mb-4">"PortfolioGuardian has transformed how we manage our investment administration. Their attention to detail and proactive approach have saved us countless hours and provided peace of mind."</p>
+                            <p class="font-semibold">— John D., Family Office Manager</p>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-xl shadow-md">
+                            <div class="flex items-center mb-4">
+                                <div class="text-primary">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 italic mb-4">"The team at PortfolioGuardian consistently exceeds our expectations. Their expertise in PAF administration has been invaluable, and their reports are always accurate and on time."</p>
+                            <p class="font-semibold">— Sarah M., Trustee</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-first lg:order-last">
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <h3 class="text-2xl font-bold mb-6">Our Client Promise</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <div class="text-primary mr-4 mt-1"><i class="fas fa-check-circle"></i></div>
+                                <p class="text-gray-700">Responsive communication with same-day responses to inquiries</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="text-primary mr-4 mt-1"><i class="fas fa-check-circle"></i></div>
+                                <p class="text-gray-700">Accurate, timely reporting that meets your specific requirements</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="text-primary mr-4 mt-1"><i class="fas fa-check-circle"></i></div>
+                                <p class="text-gray-700">Transparent, fixed fee structure with no hidden costs</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="text-primary mr-4 mt-1"><i class="fas fa-check-circle"></i></div>
+                                <p class="text-gray-700">Dedicated team members who know your portfolio</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="text-primary mr-4 mt-1"><i class="fas fa-check-circle"></i></div>
+                                <p class="text-gray-700">Proactive approach to identifying issues and opportunities</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="text-primary mr-4 mt-1"><i class="fas fa-check-circle"></i></div>
+                                <p class="text-gray-700">Secure, 24/7 access to your portfolio information</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-cover bg-center bg-no-repeat text-white"
+             style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/cta-bg.jpg');">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to experience the PortfolioGuardian difference?</h2>
+                <p class="text-xl mb-8">Contact us today to discuss how we can simplify your investment administration.</p>
+                <a href="contact.html" class="btn-primary text-lg px-8 py-4">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div>
+                    <h2 class="text-2xl font-heading mb-4">
+                        <img src="images/logo-white.png" alt="PortfolioGuardian Logo" class="h-12">
+                    </h2>
+                    <p class="text-gray-400">Your Easy Administration Solution</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl mb-4">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="team.html" class="text-gray-400 hover:text-white transition-colors">Our Team</a></li>
+                        <li><a href="why-us.html" class="text-gray-400 hover:text-white transition-colors">Why Us</a></li>
+                        <li><a href="faq.html" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl mb-4">Our Services</h3>
+                    <ul class="space-y-3">
+                        <li><a href="services.html#investment" class="text-gray-400 hover:text-white transition-colors">Investment Administration</a></li>
+                        <li><a href="services.html#paf" class="text-gray-400 hover:text-white transition-colors">PAF & PuAF Services</a></li>
+                        <li><a href="services.html#taxation" class="text-gray-400 hover:text-white transition-colors">Taxation Reports</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl mb-4">Contact Us</h3>
+                    <div class="space-y-3 text-gray-400">
+                        <p><i class="fas fa-phone mr-2"></i> (02) 1234 5678</p>
+                        <p><i class="fas fa-envelope mr-2"></i> info@portfolioguardian.com</p>
+                        <div class="flex space-x-4 mt-4">
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin text-xl"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-twitter text-xl"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook text-xl"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 pt-8 border-t border-gray-700 text-center text-gray-400">
+                <p>&copy; 2025 PortfolioGuardian. All rights reserved.</p>
+                <p>Liability limited by a scheme approved under Professional Standards Legislation</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 

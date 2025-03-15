@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - PortfolioGuardian</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="min-h-screen bg-white" x-data="{ mobileMenuOpen: false }">
+    <header class="fixed w-full bg-white shadow-md transition-all duration-300 z-50" 
+            :class="{ 'bg-opacity-95 backdrop-blur-sm': window.pageYOffset > 0 }">
+        <div class="container mx-auto px-4 py-4">
+            <nav class="flex items-center justify-between">
+                <div class="text-2xl font-heading font-bold text-primary">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="PortfolioGuardian Logo" class="h-16">
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="services.html" class="nav-link active">Services</a>
+                    <a href="team.html" class="nav-link">Our Team</a>
+                    <a href="why-us.html" class="nav-link">Why Us</a>
+                    <a href="faq.html" class="nav-link">FAQ</a>
+                    <a href="contact.html" class="nav-link">Contact Us</a>
+                    <a href="#" class="btn-primary">Client Login</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden" @click="mobileMenuOpen = !mobileMenuOpen">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path :class="{'hidden': mobileMenuOpen, 'inline-flex': !mobileMenuOpen }" stroke-linecap="round" 
+                              stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        <path :class="{'hidden': !mobileMenuOpen, 'inline-flex': mobileMenuOpen }" stroke-linecap="round" 
+                              stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </nav>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div class="lg:hidden mobile-menu" x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-200"
+             x-transition:enter-start="opacity-0 -translate-y-4" x-transition:enter-end="opacity-100 translate-y-0"
+             x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0"
+             x-transition:leave-end="opacity-0 -translate-y-4" @click.away="mobileMenuOpen = false">
+            <div class="px-4 py-5 space-y-4 bg-white shadow-lg">
+                <a href="index.html" class="block nav-link">Home</a>
+                <a href="services.html" class="block nav-link active">Services</a>
+                <a href="team.html" class="block nav-link">Our Team</a>
+                <a href="why-us.html" class="block nav-link">Why Us</a>
+                <a href="faq.html" class="block nav-link">FAQ</a>
+                <a href="contact.html" class="block nav-link">Contact Us</a>
+                <a href="#" class="block btn-primary text-center">Client Login</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="pt-32 flex items-center justify-center min-h-[50vh] bg-cover bg-center" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/banner.jpg');">
+        <div class="container mx-auto px-4 text-center py-20 fade-in">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-white">Our Services</h1>
+            <div class="w-24 h-1 bg-white mx-auto mb-8"></div>
+            <p class="text-xl max-w-3xl mx-auto text-white">Comprehensive investment administration and reporting solutions</p>
+        </div>
+    </section>
+
+    <section id="investment" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <h2 class="text-3xl font-bold mb-6">Investment Administration and Reporting</h2>
+                    <p class="mb-6 text-gray-700">PortfolioGuardian provides comprehensive investment administration services designed to simplify the complex task of managing your investment portfolio. Our specialized team handles all aspects of your investment administration, allowing you to focus on making strategic decisions.</p>
+                    
+                    <h3 class="text-xl font-semibold mb-4">Our Investment Administration Services Include:</h3>
+                    <ul class="space-y-2 mb-6 list-disc pl-5 text-gray-700">
+                        <li>Daily transaction processing and reconciliation</li>
+                        <li>Accurate portfolio valuation and performance reporting</li>
+                        <li>Income and distribution management</li>
+                        <li>Comprehensive reporting for various timeframes</li>
+                        <li>Customized reporting based on your specific requirements</li>
+                        <li>Secure online access to your portfolio information</li>
+                    </ul>
+                    
+                    <p class="mb-8 text-gray-700">With our fixed fee structure that's not linked to portfolio value, you can count on predictable costs regardless of how your investments perform.</p>
+                    
+                    <a href="contact.html" class="btn-primary">Discuss Your Investment Administration Needs</a>
+                </div>
+                <div class="rounded-xl overflow-hidden shadow-xl fade-in fade-in-delay-1">
+                    <img src="images/investment-admin.jpg" alt="Investment Administration Services" class="w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="paf" class="py-20 bg-light">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="order-2 lg:order-1 rounded-xl overflow-hidden shadow-xl fade-in fade-in-delay-2">
+                    <img src="images/paf-services.jpg" alt="PAF & PuAF Services" class="w-full h-auto">
+                </div>
+                <div class="order-1 lg:order-2 fade-in fade-in-delay-3">
+                    <h2 class="text-3xl font-bold mb-6">PAF & PuAF Services</h2>
+                    <p class="mb-6 text-gray-700">PortfolioGuardian offers specialized services for Private Ancillary Funds (PAFs) and Public Ancillary Funds (PuAFs). With over 17 years of experience, we understand the unique requirements and compliance obligations these structures face.</p>
+                    
+                    <h3 class="text-xl font-semibold mb-4">Our PAF & PuAF Services Include:</h3>
+                    <ul class="space-y-2 mb-6 list-disc pl-5 text-gray-700">
+                        <li>Establishment and ongoing administration of PAFs and PuAFs</li>
+                        <li>Compliance monitoring and reporting</li>
+                        <li>Management of minimum distribution requirements</li>
+                        <li>Preparation of financial statements</li>
+                        <li>Coordination with external auditors</li>
+                        <li>Grant management and documentation</li>
+                        <li>ATO lodgment assistance</li>
+                    </ul>
+                    
+                    <p class="mb-8 text-gray-700">We work closely with trustees to ensure all regulatory requirements are met while maximizing the philanthropic impact of your fund.</p>
+                    
+                    <a href="contact.html" class="btn-primary">Learn More About Our Fund Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="taxation" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <h2 class="text-3xl font-bold mb-6">Annual Taxation Reports</h2>
+                    <p class="mb-6 text-gray-700">Our comprehensive taxation reporting services are designed to make tax time straightforward and stress-free. We provide detailed, accurate reports that capture all the information needed for your tax returns.</p>
+                    
+                    <h3 class="text-xl font-semibold mb-4">Our Taxation Reporting Services Include:</h3>
+                    <ul class="space-y-2 mb-6 list-disc pl-5 text-gray-700">
+                        <li>Consolidated tax reports across all investments and platforms</li>
+                        <li>Detailed breakdown of income types (dividends, interest, trust distributions, etc.)</li>
+                        <li>Capital gains calculations with consideration of tax parcel selection methods</li>
+                        <li>Tracking of tax credits, including franking credits and foreign tax paid</li>
+                        <li>Reports formatted for easy handover to your accountant or tax advisor</li>
+                        <li>Historical record-keeping for audit purposes</li>
+                    </ul>
+                    
+                    <p class="mb-8 text-gray-700">Our taxation reports are prepared with the utmost attention to detail, ensuring accuracy and compliance with current tax regulations.</p>
+                    
+                    <a href="contact.html" class="btn-primary">Simplify Your Tax Reporting</a>
+                </div>
+                <div class="rounded-xl overflow-hidden shadow-xl fade-in fade-in-delay-4">
+                    <img src="images/taxation-reports.jpg" alt="Year-end Taxation Reports" class="w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-cover bg-center bg-no-repeat text-white"
+             style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/cta-bg.jpg');">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to streamline your investment administration?</h2>
+                <p class="text-xl mb-8">Contact us today to discuss how we can tailor our services to meet your specific needs.</p>
+                <a href="contact.html" class="btn-primary text-lg px-8 py-4">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div>
+                    <h2 class="text-2xl font-heading mb-4">
+                        <img src="images/logo-white.png" alt="PortfolioGuardian Logo" class="h-12">
+                    </h2>
+                    <p class="text-gray-400">Your Easy Administration Solution</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl mb-4">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="team.html" class="text-gray-400 hover:text-white transition-colors">Our Team</a></li>
+                        <li><a href="why-us.html" class="text-gray-400 hover:text-white transition-colors">Why Us</a></li>
+                        <li><a href="faq.html" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl mb-4">Our Services</h3>
+                    <ul class="space-y-3">
+                        <li><a href="services.html#investment" class="text-gray-400 hover:text-white transition-colors">Investment Administration</a></li>
+                        <li><a href="services.html#paf" class="text-gray-400 hover:text-white transition-colors">PAF & PuAF Services</a></li>
+                        <li><a href="services.html#taxation" class="text-gray-400 hover:text-white transition-colors">Taxation Reports</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl mb-4">Contact Us</h3>
+                    <div class="space-y-3 text-gray-400">
+                        <p><i class="fas fa-phone mr-2"></i> (02) 1234 5678</p>
+                        <p><i class="fas fa-envelope mr-2"></i> info@portfolioguardian.com</p>
+                        <div class="flex space-x-4 mt-4">
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin text-xl"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 pt-8 border-t border-gray-700 text-center text-gray-400">
+                <p>&copy; 2025 PortfolioGuardian. All rights reserved.</p>
+                <p>Liability limited by a scheme approved under Professional Standards Legislation</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 
