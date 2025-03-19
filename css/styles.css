@@ -1093,6 +1093,11 @@ h1, h2, h3, h4, h5, h6{
   padding-bottom: 16rem;
 }
 
+.py-48{
+  padding-top: 12rem;
+  padding-bottom: 12rem;
+}
+
 .py-3{
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
