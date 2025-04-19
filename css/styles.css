@@ -822,6 +822,14 @@ h1, h2, h3, h4, h5, h6{
   height: 4rem;
 }
 
+.h-18{
+  height: 4.5rem;
+}
+
+.h-20{
+  height: 5rem;
+}
+
 .h-6{
   height: 1.5rem;
 }

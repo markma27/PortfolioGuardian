@@ -8,66 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
-<body class="min-h-screen bg-white" x-data="{ 
-    mobileMenuOpen: false,
-    activeCategory: 'all',
-    searchQuery: '',
-    faqItems: [
-        { category: 'general', question: 'What is investment administration?', answer: 'Investment administration involves the day-to-day management of investment portfolios, including transaction processing, reconciliation, valuation, performance reporting, and tax reporting. It\'s the operational backbone that ensures your investments are accurately tracked and reported.' },
-        { category: 'general', question: 'How is PortfolioGuardian different from other administrators?', answer: 'PortfolioGuardian stands out through our independence (we don\'t sell products or receive commissions), our fixed fee structure that doesn\'t increase with portfolio value, our ability to administer any asset on any platform, and our personalized service from qualified professionals.' },
-        { category: 'services', question: 'What types of investments can you administer?', answer: 'We can administer virtually any type of investment, including listed securities (shares, ETFs), managed funds, fixed income investments, private equity, direct property, and alternative investments. Our systems are designed to handle diverse portfolio compositions.' },
-        { category: 'services', question: 'Do you provide online access to portfolio information?', answer: 'Yes, we provide secure online access to your portfolio information through our client portal. This allows you to view your portfolio valuation, performance, transaction history, and reports at any time.' },
-        { category: 'fees', question: 'How are your fees structured?', answer: 'We operate on a fixed fee basis, which means our fees are not linked to the value of your portfolio. This transparent approach ensures you know exactly what you\'re paying, and your costs don\'t automatically increase just because your investments perform well.' },
-        { category: 'fees', question: 'Are there any hidden costs or additional charges?', answer: 'No, we believe in complete transparency. Our fee structure is clearly outlined from the beginning, with no hidden costs or surprise charges. Any additional services beyond our standard offering would be discussed and agreed upon before implementation.' },
-        { category: 'paf', question: 'What are PAFs and PuAFs?', answer: 'Private Ancillary Funds (PAFs) and Public Ancillary Funds (PuAFs) are philanthropic structures that allow for tax-effective giving. PAFs are typically established by individuals or families, while PuAFs can receive donations from the public. Both structures require careful administration to ensure compliance with regulatory requirements.' },
-        { category: 'paf', question: 'What are the compliance requirements for PAFs?', answer: 'PAFs must distribute a minimum of 5% of the fund\'s net assets annually, maintain proper financial records, prepare annual financial statements, submit annual returns to the ATO, and comply with investment strategy requirements. Our administration services ensure all these requirements are met.' },
-        { category: 'reporting', question: 'How frequently will I receive reports?', answer: 'We provide regular reporting based on your needs, including monthly, quarterly, and annual reports. These can be customized to focus on the aspects of your portfolio that matter most to you.' },
-        { category: 'reporting', question: 'What information is included in your tax reports?', answer: 'Our comprehensive tax reports include a detailed breakdown of all income (dividends, interest, distributions), capital gains/losses with consideration of tax parcel selection methods, tax credits (including franking credits and foreign tax paid), and deductible expenses. These reports are designed to make tax time easier for both you and your accountant.' }
-    ]
-}">
-    <header class="fixed w-full bg-white shadow-md transition-all duration-300 z-50" 
-            :class="{ 'bg-opacity-95 backdrop-blur-sm': window.pageYOffset > 0 }">
-        <div class="container mx-auto px-4 py-4">
-            <nav class="flex items-center justify-between">
-                <div class="text-2xl font-heading font-bold text-primary">
-                    <a href="index.html">
-                        <img src="images/logo.png" alt="PortfolioGuardian Logo" class="h-16">
-                    </a>
-                </div>
-                
-                <!-- Desktop Navigation -->
-                <div class="hidden lg:flex items-center space-x-8">
-                    <a href="index.html" class="nav-link">Home</a>
-                    <a href="services.html" class="nav-link">Services</a>
-                    <a href="team.html" class="nav-link">Our Team</a>
-                    <a href="why-us.html" class="nav-link">Why Us</a>
-                    <a href="faq.html" class="nav-link active">FAQ</a>
-                    <a href="contact.html" class="nav-link">Contact Us</a>
-                    <a href="#" class="btn-primary">Client Login</a>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <button class="lg:hidden" id="menuButton">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                </button>
-            </nav>
-        </div>
-
-        <!-- Mobile Navigation -->
-        <div class="lg:hidden mobile-menu hidden" id="mobileMenu">
-            <div class="px-4 py-5 space-y-4 bg-white shadow-lg">
-                <a href="index.html" class="block nav-link">Home</a>
-                <a href="services.html" class="block nav-link">Services</a>
-                <a href="team.html" class="block nav-link">Our Team</a>
-                <a href="why-us.html" class="block nav-link">Why Us</a>
-                <a href="faq.html" class="block nav-link active">FAQ</a>
-                <a href="contact.html" class="block nav-link">Contact Us</a>
-                <a href="#" class="block btn-primary text-center">Client Login</a>
-            </div>
-        </div>
-    </header>
+<body class="min-h-screen bg-white" x-data="{ mobileMenuOpen: false }">
+    <!-- Header will be loaded here by components.js -->
 
     <section class="pt-24 flex items-center justify-center min-h-[30vh] bg-cover bg-center" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/banner.jpg');">
         <div class="container mx-auto px-4 text-center py-20 fade-in">
@@ -79,92 +21,112 @@
 
     <section class="py-20">
         <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
-                
-                <!-- FAQ List -->
-                <div class="space-y-6">
+            <div class="max-w-3xl mx-auto">
+                <div class="space-y-8">
                     <!-- General Questions -->
-                    <div class="mb-10">
-                        <h3 class="text-2xl font-bold mb-4 text-primary">General Questions</h3>
-                        
+                    <div class="bg-white rounded-xl shadow-lg p-8 fade-in">
+                        <h2 class="text-2xl font-bold mb-6">General Questions</h2>
                         <div class="space-y-6">
-                            <div class="bg-white rounded-lg shadow-md p-6">
-                                <h4 class="text-xl font-bold mb-3">What is investment administration?</h4>
-                                <p class="text-gray-700">Investment administration involves the day-to-day management of investment portfolios, including transaction processing, reconciliation, valuation, performance reporting, and tax reporting. It's the operational backbone that ensures your investments are accurately tracked and reported.</p>
+                            <div x-data="{ open: false }" class="border-b border-gray-200 pb-4">
+                                <button @click="open = !open" class="flex justify-between items-center w-full text-left">
+                                    <h3 class="text-lg font-semibold">What services does PortfolioGuardian offer?</h3>
+                                    <i class="fas" :class="open ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                                </button>
+                                <div x-show="open" class="mt-4 text-gray-700">
+                                    <p>We offer comprehensive investment administration services including portfolio management, PAF & PuAF administration, taxation reporting, and compliance services. Our team handles all aspects of investment administration to ensure accuracy and efficiency.</p>
+                                </div>
                             </div>
-                            
-                            <div class="bg-white rounded-lg shadow-md p-6">
-                                <h4 class="text-xl font-bold mb-3">How is PortfolioGuardian different from other administrators?</h4>
-                                <p class="text-gray-700">PortfolioGuardian stands out through our independence (we don't sell products or receive commissions), our fixed fee structure that doesn't increase with portfolio value, our ability to administer any asset on any platform, and our personalized service from qualified professionals.</p>
+
+                            <div x-data="{ open: false }" class="border-b border-gray-200 pb-4">
+                                <button @click="open = !open" class="flex justify-between items-center w-full text-left">
+                                    <h3 class="text-lg font-semibold">How long has PortfolioGuardian been in business?</h3>
+                                    <i class="fas" :class="open ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                                </button>
+                                <div x-show="open" class="mt-4 text-gray-700">
+                                    <p>PortfolioGuardian has been providing investment administration services for over 20 years. Our experienced team has a proven track record of delivering reliable and efficient services to our clients.</p>
+                                </div>
+                            </div>
+
+                            <div x-data="{ open: false }" class="border-b border-gray-200 pb-4">
+                                <button @click="open = !open" class="flex justify-between items-center w-full text-left">
+                                    <h3 class="text-lg font-semibold">What makes PortfolioGuardian different from other providers?</h3>
+                                    <i class="fas" :class="open ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                                </button>
+                                <div x-show="open" class="mt-4 text-gray-700">
+                                    <p>We differentiate ourselves through our independent status, fixed fee structure, personalized service, and advanced technology. Our team of experts provides dedicated support and ensures accurate, timely reporting for all clients.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Services Questions -->
-                    <div class="mb-10">
-                        <h3 class="text-2xl font-bold mb-4 text-primary">Services</h3>
-                        
+
+                    <!-- Service Questions -->
+                    <div class="bg-white rounded-xl shadow-lg p-8 fade-in fade-in-delay-1">
+                        <h2 class="text-2xl font-bold mb-6">Service Questions</h2>
                         <div class="space-y-6">
-                            <div class="bg-white rounded-lg shadow-md p-6">
-                                <h4 class="text-xl font-bold mb-3">What types of investments can you administer?</h4>
-                                <p class="text-gray-700">We can administer virtually any type of investment, including listed securities (shares, ETFs), managed funds, fixed income investments, private equity, direct property, and alternative investments. Our systems are designed to handle diverse portfolio compositions.</p>
+                            <div x-data="{ open: false }" class="border-b border-gray-200 pb-4">
+                                <button @click="open = !open" class="flex justify-between items-center w-full text-left">
+                                    <h3 class="text-lg font-semibold">How do you handle PAF and PuAF administration?</h3>
+                                    <i class="fas" :class="open ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                                </button>
+                                <div x-show="open" class="mt-4 text-gray-700">
+                                    <p>Our PAF and PuAF administration services include comprehensive portfolio management, compliance monitoring, and reporting. We ensure all activities comply with relevant regulations and provide detailed reports on portfolio performance and compliance status.</p>
+                                </div>
                             </div>
-                            
-                            <div class="bg-white rounded-lg shadow-md p-6">
-                                <h4 class="text-xl font-bold mb-3">Do you provide online access to portfolio information?</h4>
-                                <p class="text-gray-700">Yes, we provide secure online access to your portfolio information through our client portal. This allows you to view your portfolio valuation, performance, transaction history, and reports at any time.</p>
+
+                            <div x-data="{ open: false }" class="border-b border-gray-200 pb-4">
+                                <button @click="open = !open" class="flex justify-between items-center w-full text-left">
+                                    <h3 class="text-lg font-semibold">What types of investment products do you administer?</h3>
+                                    <i class="fas" :class="open ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                                </button>
+                                <div x-show="open" class="mt-4 text-gray-700">
+                                    <p>We administer a wide range of investment products including managed funds, direct equities, fixed income securities, and alternative investments. Our team has expertise in handling complex investment structures and ensuring accurate administration across all asset classes.</p>
+                                </div>
+                            </div>
+
+                            <div x-data="{ open: false }" class="border-b border-gray-200 pb-4">
+                                <button @click="open = !open" class="flex justify-between items-center w-full text-left">
+                                    <h3 class="text-lg font-semibold">How often do you provide reports?</h3>
+                                    <i class="fas" :class="open ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                                </button>
+                                <div x-show="open" class="mt-4 text-gray-700">
+                                    <p>We provide regular reports on a monthly, quarterly, and annual basis, depending on your requirements. All reports are delivered in a timely manner and can be customized to meet your specific needs.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Fees Questions -->
-                    <div class="mb-10">
-                        <h3 class="text-2xl font-bold mb-4 text-primary">Fees</h3>
-                        
+
+                    <!-- Technical Questions -->
+                    <div class="bg-white rounded-xl shadow-lg p-8 fade-in fade-in-delay-2">
+                        <h2 class="text-2xl font-bold mb-6">Technical Questions</h2>
                         <div class="space-y-6">
-                            <div class="bg-white rounded-lg shadow-md p-6">
-                                <h4 class="text-xl font-bold mb-3">How are your fees structured?</h4>
-                                <p class="text-gray-700">We operate on a fixed fee basis, which means our fees are not linked to the value of your portfolio. This transparent approach ensures you know exactly what you're paying, and your costs don't automatically increase just because your investments perform well.</p>
+                            <div x-data="{ open: false }" class="border-b border-gray-200 pb-4">
+                                <button @click="open = !open" class="flex justify-between items-center w-full text-left">
+                                    <h3 class="text-lg font-semibold">What security measures do you have in place?</h3>
+                                    <i class="fas" :class="open ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                                </button>
+                                <div x-show="open" class="mt-4 text-gray-700">
+                                    <p>We implement robust security measures including encrypted data transmission, secure servers, regular security audits, and strict access controls. Our systems comply with industry standards and best practices to ensure the safety of your data.</p>
+                                </div>
                             </div>
-                            
-                            <div class="bg-white rounded-lg shadow-md p-6">
-                                <h4 class="text-xl font-bold mb-3">Are there any hidden costs or additional charges?</h4>
-                                <p class="text-gray-700">No, we believe in complete transparency. Our fee structure is clearly outlined from the beginning, with no hidden costs or surprise charges. Any additional services beyond our standard offering would be discussed and agreed upon before implementation.</p>
+
+                            <div x-data="{ open: false }" class="border-b border-gray-200 pb-4">
+                                <button @click="open = !open" class="flex justify-between items-center w-full text-left">
+                                    <h3 class="text-lg font-semibold">How do you ensure data accuracy?</h3>
+                                    <i class="fas" :class="open ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                                </button>
+                                <div x-show="open" class="mt-4 text-gray-700">
+                                    <p>We use advanced technology and rigorous quality control processes to ensure data accuracy. Our systems include automated validation checks, and our team performs regular reviews to maintain the highest standards of accuracy in all our services.</p>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    
-                    <!-- PAF Questions -->
-                    <div class="mb-10">
-                        <h3 class="text-2xl font-bold mb-4 text-primary">Private Ancillary Funds (PAFs)</h3>
-                        
-                        <div class="space-y-6">
-                            <div class="bg-white rounded-lg shadow-md p-6">
-                                <h4 class="text-xl font-bold mb-3">What are PAFs and PuAFs?</h4>
-                                <p class="text-gray-700">Private Ancillary Funds (PAFs) and Public Ancillary Funds (PuAFs) are philanthropic structures that allow for tax-effective giving. PAFs are typically established by individuals or families, while PuAFs can receive donations from the public. Both structures require careful administration to ensure compliance with regulatory requirements.</p>
-                            </div>
-                            
-                            <div class="bg-white rounded-lg shadow-md p-6">
-                                <h4 class="text-xl font-bold mb-3">What are the compliance requirements for PAFs?</h4>
-                                <p class="text-gray-700">PAFs must distribute a minimum of 5% of the fund's net assets annually, maintain proper financial records, prepare annual financial statements, submit annual returns to the ATO, and comply with investment strategy requirements. Our administration services ensure all these requirements are met.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Reporting Questions -->
-                    <div class="mb-10">
-                        <h3 class="text-2xl font-bold mb-4 text-primary">Reporting</h3>
-                        
-                        <div class="space-y-6">
-                            <div class="bg-white rounded-lg shadow-md p-6">
-                                <h4 class="text-xl font-bold mb-3">How frequently will I receive reports?</h4>
-                                <p class="text-gray-700">We provide regular reporting based on your needs, including monthly, quarterly, and annual reports. These can be customized to focus on the aspects of your portfolio that matter most to you.</p>
-                            </div>
-                            
-                            <div class="bg-white rounded-lg shadow-md p-6">
-                                <h4 class="text-xl font-bold mb-3">What information is included in your tax reports?</h4>
-                                <p class="text-gray-700">Our comprehensive tax reports include a detailed breakdown of all income (dividends, interest, distributions), capital gains/losses with consideration of tax parcel selection methods, tax credits (including franking credits and foreign tax paid), and deductible expenses. These reports are designed to make tax time easier for both you and your accountant.</p>
+
+                            <div x-data="{ open: false }" class="border-b border-gray-200 pb-4">
+                                <button @click="open = !open" class="flex justify-between items-center w-full text-left">
+                                    <h3 class="text-lg font-semibold">Can I access my portfolio information online?</h3>
+                                    <i class="fas" :class="open ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                                </button>
+                                <div x-show="open" class="mt-4 text-gray-700">
+                                    <p>Yes, we provide secure online access to your portfolio information through our client portal. You can view reports, track performance, and access important documents 24/7 from any device.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -173,66 +135,19 @@
         </div>
     </section>
 
-    <footer class="bg-dark text-white py-16">
+    <section class="py-20 bg-light">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-                <div>
-                    <h2 class="text-2xl font-heading mb-4">
-                        <img src="images/logo-white.png" alt="PortfolioGuardian Logo" class="h-16">
-                    </h2>
-                    <p class="text-gray-400">Your Easy Administration Solution <br />  <br />  Simplifying investment administration and reporting for over 20 years</p>
-                </div>
-                
-                <div>
-                    <h3 class="text-xl mb-4">Quick Links</h3>
-                    <ul class="space-y-3">
-                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
-                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
-                        <li><a href="team.html" class="text-gray-400 hover:text-white transition-colors">Our Team</a></li>
-                        <li><a href="why-us.html" class="text-gray-400 hover:text-white transition-colors">Why Us</a></li>
-                        <li><a href="faq.html" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
-                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3 class="text-xl mb-4">Our Services</h3>
-                    <ul class="space-y-3">
-                        <li><a href="services.html#investment" class="text-gray-400 hover:text-white transition-colors">Investment Administration</a></li>
-                        <li><a href="services.html#paf" class="text-gray-400 hover:text-white transition-colors">PAF & PuAF Services</a></li>
-                        <li><a href="services.html#taxation" class="text-gray-400 hover:text-white transition-colors">Taxation Reports</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3 class="text-xl mb-4">Contact Us</h3>
-                    <div class="space-y-3 text-gray-400">
-                        <p><i class="fas fa-phone mr-2"></i> (02) 1234 5678</p>
-                        <p><i class="fas fa-envelope mr-2"></i> info@portfolioguardian.com</p>
-                        <div class="flex space-x-4 mt-4">
-                            <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin text-xl"></i></a>
-                            <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-twitter text-xl"></i></a>
-                            <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook text-xl"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="mt-12 pt-8 border-t border-gray-700 text-center text-gray-400">
-                <p>&copy; 2025 PortfolioGuardian. All rights reserved.</p>
-                <p>Liability limited by a scheme approved under Professional Standards Legislation</p>
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-6">Still Have Questions?</h2>
+                <p class="text-gray-700 mb-8">If you can't find the answer you're looking for, our team is here to help.</p>
+                <a href="contact.html" class="btn-primary">Contact Us</a>
             </div>
         </div>
-    </footer>
+    </section>
 
+    <!-- Footer will be loaded here by components.js -->
+
+    <script src="js/components.js"></script>
     <script src="js/main.js"></script>
-    <script>
-        const menuButton = document.getElementById('menuButton');
-        const mobileMenu = document.getElementById('mobileMenu');
-
-        menuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-    </script>
 </body>
 </html> 
