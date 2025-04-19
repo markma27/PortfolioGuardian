@@ -1,6 +1,34 @@
 // PortfolioGuardian - Main JavaScript File
 
+// Scroll Animation Function
+function initScrollAnimations() {
+    const animatedElements = document.querySelectorAll('.fade-in, .fade-in-delay-1, .fade-in-delay-2, .fade-in-delay-3, .fade-in-delay-4, .fade-in-delay-5');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                // Don't unobserve to allow re-animation when scrolling back up
+                // observer.unobserve(entry.target);
+            } else {
+                // Remove visible class when element leaves viewport
+                entry.target.classList.remove('visible');
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    animatedElements.forEach(element => {
+        observer.observe(element);
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize scroll animations
+    initScrollAnimations();
+
     // Mobile Menu Toggle
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('nav ul');

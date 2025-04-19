@@ -15,281 +15,88 @@
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body class="min-h-screen bg-white" x-data="{ mobileMenuOpen: false, formSubmitted: false }">
-    <header class="fixed w-full bg-white shadow-md transition-all duration-300 z-50" 
-            :class="{ 'bg-opacity-95 backdrop-blur-sm': window.pageYOffset > 0 }">
-        <div class="container mx-auto px-4 py-4">
-            <nav class="flex items-center justify-between">
-                <div class="text-2xl font-heading font-bold text-primary">
-                    <a href="index.html">
-                        <img src="images/logo.png" alt="PortfolioGuardian Logo" class="h-16">
-                    </a>
-                </div>
-                
-                <!-- Desktop Navigation -->
-                <div class="hidden lg:flex items-center space-x-8">
-                    <a href="index.html" class="nav-link">Home</a>
-                    <a href="services.html" class="nav-link">Services</a>
-                    <a href="team.html" class="nav-link">Our Team</a>
-                    <a href="why-us.html" class="nav-link">Why Us</a>
-                    <a href="faq.html" class="nav-link">FAQ</a>
-                    <a href="contact.html" class="nav-link active">Contact Us</a>
-                    <a href="#" class="btn-primary">Client Login</a>
-                </div>
+    <!-- Header will be loaded here by components.js -->
 
-                <!-- Mobile Menu Button -->
-                <button class="lg:hidden" id="menuButton">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                </button>
-            </nav>
-        </div>
-
-        <!-- Mobile Navigation -->
-        <div class="lg:hidden mobile-menu hidden" id="mobileMenu">
-            <div class="px-4 py-5 space-y-4 bg-white shadow-lg">
-                <a href="index.html" class="block nav-link">Home</a>
-                <a href="services.html" class="block nav-link">Services</a>
-                <a href="team.html" class="block nav-link">Our Team</a>
-                <a href="why-us.html" class="block nav-link">Why Us</a>
-                <a href="faq.html" class="block nav-link">FAQ</a>
-                <a href="contact.html" class="block nav-link active">Contact Us</a>
-                <a href="#" class="block btn-primary text-center">Client Login</a>
-            </div>
-        </div>
-    </header>
-
-    <section class="pt-24 flex items-center justify-center min-h-[50vh] bg-cover bg-center" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/banner.jpg');">
+    <section class="pt-24 flex items-center justify-center min-h-[30vh] bg-cover bg-center" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/banner.jpg');">
         <div class="container mx-auto px-4 text-center py-20 fade-in">
             <h1 class="text-4xl md:text-5xl font-bold mb-4 text-white">Contact Us</h1>
             <div class="w-24 h-1 bg-white mx-auto mb-8"></div>
-            <p class="text-xl max-w-3xl mx-auto text-white">We'd love to hear from you</p>
+            <p class="text-xl max-w-3xl mx-auto text-white">Get in touch with our team to discuss your investment administration needs</p>
         </div>
     </section>
 
     <section class="py-20">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <!-- Contact Information -->
                 <div class="fade-in">
                     <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
-                    <p class="text-gray-700 mb-8">We're here to answer any questions you might have about our services. Reach out to us and we'll respond as soon as we can.</p>
+                    <p class="mb-8 text-gray-700">We'd love to hear from you. Whether you have questions about our services or want to discuss your specific needs, our team is here to help.</p>
                     
                     <div class="space-y-6">
                         <div class="flex items-start">
-                            <div class="text-primary text-xl mt-1 mr-4">
+                            <div class="text-primary text-2xl mr-4">
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
                             <div>
-                                <h3 class="text-xl font-semibold mb-2">Our Offices</h3>
-                                <div class="space-y-3">
-                                    <p class="text-gray-700"><strong>Adelaide</strong><br>65 Gilbert Street<br>Adelaide, SA 5000</p>
-                                    <p class="text-gray-700"><strong>Sydney</strong><br>Level 17, 123 Pitt Street<br>Sydney, NSW 2000</p>
-                                    <p class="text-gray-700"><strong>Melbourne</strong><br>Level 30, 35 Collins Street<br>Melbourne, VIC 3000</p>
-                                </div>
+                                <h3 class="font-semibold mb-1">Address</h3>
+                                <p class="text-gray-700">123 Investment Street<br>Melbourne, VIC 3000</p>
                             </div>
                         </div>
                         
                         <div class="flex items-start">
-                            <div class="text-primary text-xl mt-1 mr-4">
+                            <div class="text-primary text-2xl mr-4">
                                 <i class="fas fa-phone"></i>
                             </div>
                             <div>
-                                <h3 class="text-xl font-semibold mb-2">Phone</h3>
-                                <p class="text-gray-700">(02) 1234 5678</p>
+                                <h3 class="font-semibold mb-1">Phone</h3>
+                                <p class="text-gray-700">(03) 1234 5678</p>
                             </div>
                         </div>
                         
                         <div class="flex items-start">
-                            <div class="text-primary text-xl mt-1 mr-4">
+                            <div class="text-primary text-2xl mr-4">
                                 <i class="fas fa-envelope"></i>
                             </div>
                             <div>
-                                <h3 class="text-xl font-semibold mb-2">Email</h3>
-                                <p class="text-gray-700">info@portfolioguardian.com</p>
+                                <h3 class="font-semibold mb-1">Email</h3>
+                                <p class="text-gray-700">info@portfolioguardian.com.au</p>
                             </div>
                         </div>
-
                     </div>
-
                 </div>
                 
-                <!-- Contact Form -->
                 <div class="fade-in fade-in-delay-1">
-                    <div class="bg-white rounded-xl shadow-lg p-8">
-                        <div x-show="!formSubmitted">
-                            <h2 class="text-2xl font-bold mb-6">Send Us a Message</h2>
-                            <form @submit.prevent="formSubmitted = true">
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                                    <div>
-                                        <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
-                                        <input type="text" id="name" name="name" required 
-                                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
-                                    </div>
-                                    <div>
-                                        <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
-                                        <input type="email" id="email" name="email" required 
-                                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
-                                    </div>
-                                </div>
-                                
-                                <div class="mb-6">
-                                    <label for="phone" class="block text-gray-700 font-medium mb-2">Phone (Optional)</label>
-                                    <input type="tel" id="phone" name="phone" 
-                                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
-                                </div>
-                                
-                                <div class="mb-6">
-                                    <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
-                                    <select id="subject" name="subject" required 
-                                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
-                                        <option value="">Please select</option>
-                                        <option value="general">General Inquiry</option>
-                                        <option value="services">Services Information</option>
-                                        <option value="quote">Request a Quote</option>
-                                        <option value="support">Client Support</option>
-                                        <option value="other">Other</option>
-                                    </select>
-                                </div>
-                                
-                                <div class="mb-6">
-                                    <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
-                                    <textarea id="message" name="message" rows="5" required 
-                                              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
-                                </div>
-                                
-                                <button type="submit" class="btn-primary w-full py-3">Send Message</button>
-                            </form>
+                    <form class="bg-white rounded-xl shadow-lg p-8">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 font-semibold mb-2">Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-primary">
                         </div>
                         
-                        <div x-show="formSubmitted" x-cloak class="text-center py-8">
-                            <div class="text-5xl text-primary mb-4">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                            <h3 class="text-2xl font-bold mb-2">Thank You!</h3>
-                            <p class="text-gray-700 mb-6">Your message has been sent successfully. We'll get back to you as soon as possible.</p>
-                            <button @click="formSubmitted = false" class="btn-secondary">Send Another Message</button>
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-primary">
                         </div>
-                    </div>
+                        
+                        <div class="mb-6">
+                            <label for="phone" class="block text-gray-700 font-semibold mb-2">Phone</label>
+                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-primary">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-semibold mb-2">Message</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-primary"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary w-full">Send Message</button>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-16 bg-light">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-8 text-center">Visit Our Offices</h2>
-            <div class="grid grid-cols-1 gap-8">
-                
-                <!-- Adelaide Office Map -->
-                <div class="rounded-xl overflow-hidden shadow-xl">
-                    <div class="h-80">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3271.828718509324!2d138.59335431538716!3d-34.92999998037404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ab0ced1db7ae4c1%3A0x5033654628ec9f0!2s65%20Gilbert%20St%2C%20Adelaide%20SA%205000!5e0!3m2!1sen!2sau!4v1699234567892!5m2!1sen!2sau" 
-                            width="100%" 
-                            height="100%" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                    </div>
-                </div>
-                
-                <!-- Sydney Office Map -->
-                <div class="rounded-xl overflow-hidden shadow-xl">
-                    <div class="h-80">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.8536913564!2d151.20744087677268!3d-33.86832997322424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae3f3298a729%3A0x11c41f8c7c1baa11!2s123%20Pitt%20St%2C%20Sydney%20NSW%202000!5e0!3m2!1sen!2sau!4v1699234567890!5m2!1sen!2sau" 
-                            width="100%" 
-                            height="100%" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                    </div>
-                </div>
-                
-                <!-- Melbourne Office Map -->
-                <div class="rounded-xl overflow-hidden shadow-xl">
-                    <div class="h-80">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8351288796587!2d144.97089731532253!3d-37.81346397975193!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642b8b25b3361%3A0x1d04567609f49086!2sLevel%2030%2F35%20Collins%20St%2C%20Melbourne%20VIC%203000!5e0!3m2!1sen!2sau!4v1699234567891!5m2!1sen!2sau" 
-                            width="100%" 
-                            height="100%" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-    </section>
+    <!-- Footer will be loaded here by components.js -->
 
-    <footer class="bg-dark text-white py-16">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-                <div>
-                    <h2 class="text-2xl font-heading mb-4">
-                        <img src="images/logo-white.png" alt="PortfolioGuardian Logo" class="h-16">
-                    </h2>
-                    <p class="text-gray-400">Your Easy Administration Solution <br />  <br />  Simplifying investment administration and reporting for over 20 years</p>
-                </div>
-                
-                <div>
-                    <h3 class="text-xl mb-4">Quick Links</h3>
-                    <ul class="space-y-3">
-                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
-                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
-                        <li><a href="team.html" class="text-gray-400 hover:text-white transition-colors">Our Team</a></li>
-                        <li><a href="why-us.html" class="text-gray-400 hover:text-white transition-colors">Why Us</a></li>
-                        <li><a href="faq.html" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
-                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3 class="text-xl mb-4">Our Services</h3>
-                    <ul class="space-y-3">
-                        <li><a href="services.html#investment" class="text-gray-400 hover:text-white transition-colors">Investment Administration</a></li>
-                        <li><a href="services.html#paf" class="text-gray-400 hover:text-white transition-colors">PAF & PuAF Services</a></li>
-                        <li><a href="services.html#taxation" class="text-gray-400 hover:text-white transition-colors">Taxation Reports</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3 class="text-xl mb-4">Contact Us</h3>
-                    <div class="space-y-3 text-gray-400">
-                        <p><i class="fas fa-phone mr-2"></i> (02) 1234 5678</p>
-                        <p><i class="fas fa-envelope mr-2"></i> info@portfolioguardian.com</p>
-                        <div class="flex space-x-4 mt-4">
-                            <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin text-xl"></i></a>
-                            <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-twitter text-xl"></i></a>
-                            <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook text-xl"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="mt-12 pt-8 border-t border-gray-700 text-center text-gray-400">
-                <p>&copy; 2025 PortfolioGuardian. All rights reserved.</p>
-                <p>Liability limited by a scheme approved under Professional Standards Legislation</p>
-            </div>
-        </div>
-    </footer>
-
+    <script src="js/components.js"></script>
     <script src="js/main.js"></script>
-    <script>
-        const menuButton = document.getElementById('menuButton');
-        const mobileMenu = document.getElementById('mobileMenu');
-
-        menuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-    </script>
 </body>
 </html> 

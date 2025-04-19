@@ -1337,31 +1337,57 @@ h1, h2, h3, h4, h5, h6{
   animation: slideUp 0.5s ease-out;
 }
 
-/* New staggered fade-in animations */
-
+/* Scroll Animation Styles */
 .fade-in {
-  opacity: 0;
-  animation: fadeIn 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform;
 }
 
 .fade-in-delay-1 {
-  animation-delay: 0.2s;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out 0.2s, transform 0.8s ease-out 0.2s;
+    will-change: opacity, transform;
 }
 
 .fade-in-delay-2 {
-  animation-delay: 0.4s;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out 0.4s, transform 0.8s ease-out 0.4s;
+    will-change: opacity, transform;
 }
 
 .fade-in-delay-3 {
-  animation-delay: 0.6s;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out 0.6s, transform 0.8s ease-out 0.6s;
+    will-change: opacity, transform;
 }
 
 .fade-in-delay-4 {
-  animation-delay: 0.8s;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out 0.8s, transform 0.8s ease-out 0.8s;
+    will-change: opacity, transform;
 }
 
 .fade-in-delay-5 {
-  animation-delay: 1s;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out 1s, transform 0.8s ease-out 1s;
+    will-change: opacity, transform;
+}
+
+.fade-in.visible,
+.fade-in-delay-1.visible,
+.fade-in-delay-2.visible,
+.fade-in-delay-3.visible,
+.fade-in-delay-4.visible,
+.fade-in-delay-5.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .hover\:-translate-y-2:hover{
