@@ -36,9 +36,16 @@
                             <div x-data="{ open: false }" class="border-b border-gray-200 pb-4">
                                 <button @click="open = !open" class="flex justify-between items-center w-full text-left">
                                     <h3 class="text-lg font-semibold">What services does PortfolioGuardian offer?</h3>
-                                    <i class="fas" :class="open ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                                    <i class="fas transition-transform duration-300" :class="open ? 'fa-chevron-up rotate-180' : 'fa-chevron-down'"></i>
                                 </button>
-                                <div x-show="open" class="mt-4 text-gray-700">
+                                <div x-show="open" 
+                                     x-transition:enter="transition ease-out duration-300"
+                                     x-transition:enter-start="opacity-0 transform -translate-y-2"
+                                     x-transition:enter-end="opacity-100 transform translate-y-0"
+                                     x-transition:leave="transition ease-in duration-300"
+                                     x-transition:leave-start="opacity-100 transform translate-y-0"
+                                     x-transition:leave-end="opacity-0 transform -translate-y-2"
+                                     class="mt-4 text-gray-700">
                                     <p>We offer comprehensive investment administration services including portfolio management, PAF & PuAF administration, taxation reporting, and compliance services. Our team handles all aspects of investment administration to ensure accuracy and efficiency.</p>
                                 </div>
                             </div>
@@ -46,9 +53,16 @@
                             <div x-data="{ open: false }" class="border-b border-gray-200 pb-4">
                                 <button @click="open = !open" class="flex justify-between items-center w-full text-left">
                                     <h3 class="text-lg font-semibold">How long has PortfolioGuardian been in business?</h3>
-                                    <i class="fas" :class="open ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                                    <i class="fas transition-transform duration-300" :class="open ? 'fa-chevron-up rotate-180' : 'fa-chevron-down'"></i>
                                 </button>
-                                <div x-show="open" class="mt-4 text-gray-700">
+                                <div x-show="open" 
+                                     x-transition:enter="transition ease-out duration-300"
+                                     x-transition:enter-start="opacity-0 transform -translate-y-2"
+                                     x-transition:enter-end="opacity-100 transform translate-y-0"
+                                     x-transition:leave="transition ease-in duration-300"
+                                     x-transition:leave-start="opacity-100 transform translate-y-0"
+                                     x-transition:leave-end="opacity-0 transform -translate-y-2"
+                                     class="mt-4 text-gray-700">
                                     <p>PortfolioGuardian has been providing investment administration services for over 20 years. Our experienced team has a proven track record of delivering reliable and efficient services to our clients.</p>
                                 </div>
                             </div>
@@ -56,9 +70,16 @@
                             <div x-data="{ open: false }" class="border-b border-gray-200 pb-4">
                                 <button @click="open = !open" class="flex justify-between items-center w-full text-left">
                                     <h3 class="text-lg font-semibold">What makes PortfolioGuardian different from other providers?</h3>
-                                    <i class="fas" :class="open ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                                    <i class="fas transition-transform duration-300" :class="open ? 'fa-chevron-up rotate-180' : 'fa-chevron-down'"></i>
                                 </button>
-                                <div x-show="open" class="mt-4 text-gray-700">
+                                <div x-show="open" 
+                                     x-transition:enter="transition ease-out duration-300"
+                                     x-transition:enter-start="opacity-0 transform -translate-y-2"
+                                     x-transition:enter-end="opacity-100 transform translate-y-0"
+                                     x-transition:leave="transition ease-in duration-300"
+                                     x-transition:leave-start="opacity-100 transform translate-y-0"
+                                     x-transition:leave-end="opacity-0 transform -translate-y-2"
+                                     class="mt-4 text-gray-700">
                                     <p>We differentiate ourselves through our independent status, fixed fee structure, personalized service, and advanced technology. Our team of experts provides dedicated support and ensures accurate, timely reporting for all clients.</p>
                                 </div>
                             </div>
@@ -72,9 +93,16 @@
                             <div x-data="{ open: false }" class="border-b border-gray-200 pb-4">
                                 <button @click="open = !open" class="flex justify-between items-center w-full text-left">
                                     <h3 class="text-lg font-semibold">How do you handle PAF and PuAF administration?</h3>
-                                    <i class="fas" :class="open ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                                    <i class="fas transition-transform duration-300" :class="open ? 'fa-chevron-up rotate-180' : 'fa-chevron-down'"></i>
                                 </button>
-                                <div x-show="open" class="mt-4 text-gray-700">
+                                <div x-show="open" 
+                                     x-transition:enter="transition ease-out duration-300"
+                                     x-transition:enter-start="opacity-0 transform -translate-y-2"
+                                     x-transition:enter-end="opacity-100 transform translate-y-0"
+                                     x-transition:leave="transition ease-in duration-300"
+                                     x-transition:leave-start="opacity-100 transform translate-y-0"
+                                     x-transition:leave-end="opacity-0 transform -translate-y-2"
+                                     class="mt-4 text-gray-700">
                                     <p>Our PAF and PuAF administration services include comprehensive portfolio management, compliance monitoring, and reporting. We ensure all activities comply with relevant regulations and provide detailed reports on portfolio performance and compliance status.</p>
                                 </div>
                             </div>
@@ -82,9 +110,16 @@
                             <div x-data="{ open: false }" class="border-b border-gray-200 pb-4">
                                 <button @click="open = !open" class="flex justify-between items-center w-full text-left">
                                     <h3 class="text-lg font-semibold">What types of investment products do you administer?</h3>
-                                    <i class="fas" :class="open ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                                    <i class="fas transition-transform duration-300" :class="open ? 'fa-chevron-up rotate-180' : 'fa-chevron-down'"></i>
                                 </button>
-                                <div x-show="open" class="mt-4 text-gray-700">
+                                <div x-show="open" 
+                                     x-transition:enter="transition ease-out duration-300"
+                                     x-transition:enter-start="opacity-0 transform -translate-y-2"
+                                     x-transition:enter-end="opacity-100 transform translate-y-0"
+                                     x-transition:leave="transition ease-in duration-300"
+                                     x-transition:leave-start="opacity-100 transform translate-y-0"
+                                     x-transition:leave-end="opacity-0 transform -translate-y-2"
+                                     class="mt-4 text-gray-700">
                                     <p>We administer a wide range of investment products including managed funds, direct equities, fixed income securities, and alternative investments. Our team has expertise in handling complex investment structures and ensuring accurate administration across all asset classes.</p>
                                 </div>
                             </div>
@@ -92,9 +127,16 @@
                             <div x-data="{ open: false }" class="border-b border-gray-200 pb-4">
                                 <button @click="open = !open" class="flex justify-between items-center w-full text-left">
                                     <h3 class="text-lg font-semibold">How often do you provide reports?</h3>
-                                    <i class="fas" :class="open ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                                    <i class="fas transition-transform duration-300" :class="open ? 'fa-chevron-up rotate-180' : 'fa-chevron-down'"></i>
                                 </button>
-                                <div x-show="open" class="mt-4 text-gray-700">
+                                <div x-show="open" 
+                                     x-transition:enter="transition ease-out duration-300"
+                                     x-transition:enter-start="opacity-0 transform -translate-y-2"
+                                     x-transition:enter-end="opacity-100 transform translate-y-0"
+                                     x-transition:leave="transition ease-in duration-300"
+                                     x-transition:leave-start="opacity-100 transform translate-y-0"
+                                     x-transition:leave-end="opacity-0 transform -translate-y-2"
+                                     class="mt-4 text-gray-700">
                                     <p>We provide regular reports on a monthly, quarterly, and annual basis, depending on your requirements. All reports are delivered in a timely manner and can be customized to meet your specific needs.</p>
                                 </div>
                             </div>
@@ -108,9 +150,16 @@
                             <div x-data="{ open: false }" class="border-b border-gray-200 pb-4">
                                 <button @click="open = !open" class="flex justify-between items-center w-full text-left">
                                     <h3 class="text-lg font-semibold">What security measures do you have in place?</h3>
-                                    <i class="fas" :class="open ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                                    <i class="fas transition-transform duration-300" :class="open ? 'fa-chevron-up rotate-180' : 'fa-chevron-down'"></i>
                                 </button>
-                                <div x-show="open" class="mt-4 text-gray-700">
+                                <div x-show="open" 
+                                     x-transition:enter="transition ease-out duration-300"
+                                     x-transition:enter-start="opacity-0 transform -translate-y-2"
+                                     x-transition:enter-end="opacity-100 transform translate-y-0"
+                                     x-transition:leave="transition ease-in duration-300"
+                                     x-transition:leave-start="opacity-100 transform translate-y-0"
+                                     x-transition:leave-end="opacity-0 transform -translate-y-2"
+                                     class="mt-4 text-gray-700">
                                     <p>We implement robust security measures including encrypted data transmission, secure servers, regular security audits, and strict access controls. Our systems comply with industry standards and best practices to ensure the safety of your data.</p>
                                 </div>
                             </div>
@@ -118,9 +167,16 @@
                             <div x-data="{ open: false }" class="border-b border-gray-200 pb-4">
                                 <button @click="open = !open" class="flex justify-between items-center w-full text-left">
                                     <h3 class="text-lg font-semibold">How do you ensure data accuracy?</h3>
-                                    <i class="fas" :class="open ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                                    <i class="fas transition-transform duration-300" :class="open ? 'fa-chevron-up rotate-180' : 'fa-chevron-down'"></i>
                                 </button>
-                                <div x-show="open" class="mt-4 text-gray-700">
+                                <div x-show="open" 
+                                     x-transition:enter="transition ease-out duration-300"
+                                     x-transition:enter-start="opacity-0 transform -translate-y-2"
+                                     x-transition:enter-end="opacity-100 transform translate-y-0"
+                                     x-transition:leave="transition ease-in duration-300"
+                                     x-transition:leave-start="opacity-100 transform translate-y-0"
+                                     x-transition:leave-end="opacity-0 transform -translate-y-2"
+                                     class="mt-4 text-gray-700">
                                     <p>We use advanced technology and rigorous quality control processes to ensure data accuracy. Our systems include automated validation checks, and our team performs regular reviews to maintain the highest standards of accuracy in all our services.</p>
                                 </div>
                             </div>
@@ -128,9 +184,16 @@
                             <div x-data="{ open: false }" class="border-b border-gray-200 pb-4">
                                 <button @click="open = !open" class="flex justify-between items-center w-full text-left">
                                     <h3 class="text-lg font-semibold">Can I access my portfolio information online?</h3>
-                                    <i class="fas" :class="open ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                                    <i class="fas transition-transform duration-300" :class="open ? 'fa-chevron-up rotate-180' : 'fa-chevron-down'"></i>
                                 </button>
-                                <div x-show="open" class="mt-4 text-gray-700">
+                                <div x-show="open" 
+                                     x-transition:enter="transition ease-out duration-300"
+                                     x-transition:enter-start="opacity-0 transform -translate-y-2"
+                                     x-transition:enter-end="opacity-100 transform translate-y-0"
+                                     x-transition:leave="transition ease-in duration-300"
+                                     x-transition:leave-start="opacity-100 transform translate-y-0"
+                                     x-transition:leave-end="opacity-0 transform -translate-y-2"
+                                     class="mt-4 text-gray-700">
                                     <p>Yes, we provide secure online access to your portfolio information through our client portal. You can view reports, track performance, and access important documents 24/7 from any device.</p>
                                 </div>
                             </div>
