@@ -8,10 +8,7 @@ function initScrollAnimations() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                // Don't unobserve to allow re-animation when scrolling back up
-                // observer.unobserve(entry.target);
             } else {
-                // Remove visible class when element leaves viewport
                 entry.target.classList.remove('visible');
             }
         });
@@ -29,25 +26,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize scroll animations
     initScrollAnimations();
 
-    // Mobile Menu Toggle
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('nav ul');
-    
-    if (hamburger) {
-        hamburger.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-            hamburger.classList.toggle('active');
-        });
-    }
-    
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', function(event) {
-        if (navMenu && navMenu.classList.contains('active') && !event.target.closest('nav')) {
-            navMenu.classList.remove('active');
-            hamburger.classList.remove('active');
-        }
-    });
-    
     // FAQ Accordion
     const faqQuestions = document.querySelectorAll('.faq-question');
     
@@ -182,12 +160,6 @@ document.addEventListener('DOMContentLoaded', function() {
                         top: targetElement.offsetTop - 100,
                         behavior: 'smooth'
                     });
-                    
-                    // Close mobile menu if open
-                    if (navMenu && navMenu.classList.contains('active')) {
-                        navMenu.classList.remove('active');
-                        hamburger.classList.remove('active');
-                    }
                 }
             }
         });
