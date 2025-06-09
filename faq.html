@@ -46,7 +46,7 @@
                                     x-transition:leave-start="opacity-100 transform translate-y-0 scale-100"
                                     x-transition:leave-end="opacity-0 transform -translate-y-1 scale-95"
                                      class="mt-4 text-gray-700">
-                                    <p>We offer comprehensive investment administration services including portfolio management, PAF & PuAF administration, taxation reporting, and compliance services. Our team handles all aspects of investment administration to ensure accuracy and efficiency.</p>
+                                    <p>We offer comprehensive investment administration services including portfolio management, PAF & PuAF administration, taxation reporting and compliance services. Our team handles all aspects of investment administration to ensure accuracy and efficiency.</p>
                                 </div>
                             </div>
 
@@ -80,7 +80,7 @@
                                     x-transition:leave-start="opacity-100 transform translate-y-0 scale-100"
                                     x-transition:leave-end="opacity-0 transform -translate-y-1 scale-95"
                                      class="mt-4 text-gray-700">
-                                    <p>We differentiate ourselves through our independent status, fixed fee structure, personalized service, and advanced technology. Our team of experts provides dedicated support and ensures accurate, timely reporting for all clients.</p>
+                                    <p>We differentiate ourselves through our independent status, fixed fee structure, personalised service and advanced technology. Our team of experts provides dedicated support and ensures accurate, timely reporting for all clients.</p>
                                 </div>
                             </div>
                         </div>
@@ -90,22 +90,6 @@
                     <div class="bg-white rounded-xl shadow-lg p-8 fade-in fade-in-delay-1">
                         <h2 class="text-2xl font-bold mb-6">Service Questions</h2>
                         <div class="space-y-6">
-                            <div x-data="{ open: false }" class="border-b border-gray-200 pb-4">
-                                <button @click="open = !open" class="flex justify-between items-center w-full text-left">
-                                    <h3 class="text-lg font-semibold">How do you handle PAF and PuAF administration?</h3>
-                                    <i class="fas transition-transform duration-300" :class="open ? 'fa-chevron-up rotate-180' : 'fa-chevron-down'"></i>
-                                </button>
-                                <div x-show="open" 
-                                    x-transition:enter="transition ease-in-out duration-500"
-                                    x-transition:enter-start="opacity-0 transform -translate-y-1 scale-95"
-                                    x-transition:enter-end="opacity-100 transform translate-y-0 scale-100"
-                                    x-transition:leave="transition ease-in-out duration-500"
-                                    x-transition:leave-start="opacity-100 transform translate-y-0 scale-100"
-                                    x-transition:leave-end="opacity-0 transform -translate-y-1 scale-95"
-                                     class="mt-4 text-gray-700">
-                                    <p>Our PAF and PuAF administration services include comprehensive portfolio management, compliance monitoring, and reporting. We ensure all activities comply with relevant regulations and provide detailed reports on portfolio performance and compliance status.</p>
-                                </div>
-                            </div>
 
                             <div x-data="{ open: false }" class="border-b border-gray-200 pb-4">
                                 <button @click="open = !open" class="flex justify-between items-center w-full text-left">
@@ -120,7 +104,7 @@
                                     x-transition:leave-start="opacity-100 transform translate-y-0 scale-100"
                                     x-transition:leave-end="opacity-0 transform -translate-y-1 scale-95"
                                      class="mt-4 text-gray-700">
-                                    <p>We administer a wide range of investment products including managed funds, direct equities, fixed income securities, and alternative investments. Our team has expertise in handling complex investment structures and ensuring accurate administration across all asset classes.</p>
+                                    <p>We administer a wide range of investment products including managed funds, direct equities, fixed income securities and alternative investments. Our team has expertise in handling complex investment structures and ensuring accurate administration across all asset classes.</p>
                                 </div>
                             </div>
 
@@ -137,9 +121,61 @@
                                     x-transition:leave-start="opacity-100 transform translate-y-0 scale-100"
                                     x-transition:leave-end="opacity-0 transform -translate-y-1 scale-95"
                                      class="mt-4 text-gray-700">
-                                    <p>We provide regular reports on a monthly, quarterly, and annual basis, depending on your requirements. All reports are delivered in a timely manner and can be customized to meet your specific needs.</p>
+                                    <p>We provide regular reports on a monthly, quarterly and annual basis, depending on your requirements. All reports are delivered in a timely manner and can be customised to meet your specific needs.</p>
                                 </div>
                             </div>
+
+                            <div x-data="{ open: false }" class="border-b border-gray-200 pb-4">
+                                <button @click="open = !open" class="flex justify-between items-center w-full text-left">
+                                    <h3 class="text-lg font-semibold">What services do you provide for PAFs and PuAFs?</h3>
+                                    <i class="fas transition-transform duration-300" :class="open ? 'fa-chevron-up rotate-180' : 'fa-chevron-down'"></i>
+                                </button>
+                                <div x-show="open" 
+                                    x-transition:enter="transition ease-in-out duration-500"
+                                    x-transition:enter-start="opacity-0 transform -translate-y-1 scale-95"
+                                    x-transition:enter-end="opacity-100 transform translate-y-0 scale-100"
+                                    x-transition:leave="transition ease-in-out duration-500"
+                                    x-transition:leave-start="opacity-100 transform translate-y-0 scale-100"
+                                    x-transition:leave-end="opacity-0 transform -translate-y-1 scale-95"
+                                     class="mt-4 text-gray-700">
+                                    <p>We provide end-to-end support for PAF and PuAFs, including establishment, investment reporting, compliance monitoring and preparation of annual financial statements and tax returns. Our team assists with setting up the fund structure, registering with the ATO and ACNC and drafting the governing documents. We also manage ongoing obligations such as distribution calculations, ACNC compliance and audit coordination to simplify the administration of philanthropic structures.                                    </p>
+                                </div>
+                            </div>
+
+                            <div x-data="{ open: false }" class="border-b border-gray-200 pb-4">
+                                <button @click="open = !open" class="flex justify-between items-center w-full text-left">
+                                    <h3 class="text-lg font-semibold">Do you provide investment advice?</h3>
+                                    <i class="fas transition-transform duration-300" :class="open ? 'fa-chevron-up rotate-180' : 'fa-chevron-down'"></i>
+                                </button>
+                                <div x-show="open" 
+                                    x-transition:enter="transition ease-in-out duration-500"
+                                    x-transition:enter-start="opacity-0 transform -translate-y-1 scale-95"
+                                    x-transition:enter-end="opacity-100 transform translate-y-0 scale-100"
+                                    x-transition:leave="transition ease-in-out duration-500"
+                                    x-transition:leave-start="opacity-100 transform translate-y-0 scale-100"
+                                    x-transition:leave-end="opacity-0 transform -translate-y-1 scale-95"
+                                     class="mt-4 text-gray-700">
+                                    <p>No, PortfolioGuardian does not provide investment advice. We are specialists in administration, reporting and compliance, and we work alongside your financial advisers. Our independence allows us to focus solely on delivering objective, high-quality reporting and administration without conflicts of interest.</p>
+                                </div>
+                            </div>
+
+                            <div x-data="{ open: false }" class="border-b border-gray-200 pb-4">
+                                <button @click="open = !open" class="flex justify-between items-center w-full text-left">
+                                    <h3 class="text-lg font-semibold">What is your fee structure?</h3>
+                                    <i class="fas transition-transform duration-300" :class="open ? 'fa-chevron-up rotate-180' : 'fa-chevron-down'"></i>
+                                </button>
+                                <div x-show="open" 
+                                    x-transition:enter="transition ease-in-out duration-500"
+                                    x-transition:enter-start="opacity-0 transform -translate-y-1 scale-95"
+                                    x-transition:enter-end="opacity-100 transform translate-y-0 scale-100"
+                                    x-transition:leave="transition ease-in-out duration-500"
+                                    x-transition:leave-start="opacity-100 transform translate-y-0 scale-100"
+                                    x-transition:leave-end="opacity-0 transform -translate-y-1 scale-95"
+                                     class="mt-4 text-gray-700">
+                                    <p>We offer a transparent fixed-fee pricing model tailored to the specific scope of each engagement. Fees are determined based on the complexity and volume of work required, providing clients with clarity and cost predictability. Invoices are issued monthly and collected via direct debit. Our fees are reviewed annually on 1 July, taking into account changes in workload and CPI movements.</p>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
@@ -160,7 +196,7 @@
                                     x-transition:leave-start="opacity-100 transform translate-y-0 scale-100"
                                     x-transition:leave-end="opacity-0 transform -translate-y-1 scale-95"
                                      class="mt-4 text-gray-700">
-                                    <p>We implement robust security measures including encrypted data transmission, secure servers, regular security audits, and strict access controls. Our systems comply with industry standards and best practices to ensure the safety of your data.</p>
+                                    <p>We implement robust security measures including encrypted data transmission, secure servers, regular security audits and strict access controls. Our systems are certified to the ISO 27001 standard and comply with industry best practices to ensure the safety and confidentiality of your data.</p>
                                 </div>
                             </div>
 
@@ -177,7 +213,7 @@
                                     x-transition:leave-start="opacity-100 transform translate-y-0 scale-100"
                                     x-transition:leave-end="opacity-0 transform -translate-y-1 scale-95"
                                      class="mt-4 text-gray-700">
-                                    <p>We use advanced technology and rigorous quality control processes to ensure data accuracy. Our systems include automated validation checks, and our team performs regular reviews to maintain the highest standards of accuracy in all our services.</p>
+                                    <p>We use advanced technology and rigorous quality control processes to ensure data accuracy. Our systems include automated validation checks and our team performs regular reviews to maintain the highest standards of accuracy in all our services.</p>
                                 </div>
                             </div>
 
@@ -194,7 +230,7 @@
                                     x-transition:leave-start="opacity-100 transform translate-y-0 scale-100"
                                     x-transition:leave-end="opacity-0 transform -translate-y-1 scale-95"
                                      class="mt-4 text-gray-700">
-                                    <p>Yes, we provide secure online access to your portfolio information through our client portal. You can view reports, track performance, and access important documents 24/7 from any device.</p>
+                                    <p>Yes, we provide secure online access to your portfolio information through our client portal. You can view reports, track performance and access important documents 24/7 from any device.</p>
                                 </div>
                             </div>
                         </div>
