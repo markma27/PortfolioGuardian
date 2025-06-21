@@ -362,6 +362,7 @@ input:where([type='button']),
 input:where([type='reset']),
 input:where([type='submit']) {
   -webkit-appearance: button;
+  appearance: button;
   /* 1 */
   background-color: transparent;
   /* 2 */
@@ -430,6 +431,7 @@ Remove the inner padding in Chrome and Safari on macOS.
 
 ::-webkit-file-upload-button {
   -webkit-appearance: button;
+  appearance: button;
   /* 1 */
   font: inherit;
   /* 2 */
@@ -549,8 +551,6 @@ embed,
 object {
   display: block;
   /* 1 */
-  vertical-align: middle;
-  /* 2 */
 }
 
 /*
@@ -1575,5 +1575,7 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .hover-card {
-  @apply transition-transform duration-50;
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 50ms;
 } 
