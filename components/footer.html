@@ -58,15 +58,29 @@
             </div>
         </div>
         
-        <div class="mt-2 pt-8 text-center text-gray-400" style="border-top: 1px solid #4a4a4a;">
+        <div class="mt-2 pt-8 text-center text-gray-400 footer-bottom" style="border-top: 1px solid #4a4a4a;">
             <!-- Professional Certifications and Memberships -->
-            <div class="mb-8 flex flex-wrap justify-center items-center" style="gap: 1rem;">
+            <style>
+                .cert-logo-fba { height: 100px; opacity: 0.8; transition: opacity 0.3s ease; }
+                .cert-logo-iso { height: 110px; opacity: 0.8; transition: opacity 0.3s ease; }
+                .cert-logo-ca { height: 80px; opacity: 0.8; transition: opacity 0.3s ease; }
+                .cert-logo-pa { height: 115px; opacity: 0.8; transition: opacity 0.3s ease; }
+                .cert-logos-container { gap: 1rem; }
                 
-                <img src="images/FBA.png" alt="FBA Membership" style="height: 100px; opacity: 0.8; transition: opacity 0.3s ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">
-                <img src="images/iso27001.svg" alt="ISO 27001 Certification" style="height: 110px; opacity: 0.8; transition: opacity 0.3s ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">
-                
-                <img src="images/CA.png" alt="CA Certification" style="height: 80px; opacity: 0.8; transition: opacity 0.3s ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">
-                <img src="images/PA.png" alt="PA Certification" style="height: 115px; opacity: 0.8; transition: opacity 0.3s ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">
+                @media (max-width: 768px) {
+                    .cert-logo-fba { height: 60px; }
+                    .cert-logo-iso { height: 65px; }
+                    .cert-logo-ca { height: 50px; }
+                    .cert-logo-pa { height: 70px; }
+                    .cert-logos-container { gap: 0.5rem; }
+                    .footer-bottom { border-top: none !important; }
+                }
+            </style>
+            <div class="mb-8 flex flex-wrap justify-center items-center cert-logos-container">
+                <img src="images/FBA.png" alt="FBA Membership" class="cert-logo-fba" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">
+                <img src="images/iso27001.svg" alt="ISO 27001 Certification" class="cert-logo-iso" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">
+                <img src="images/CA.png" alt="CA Certification" class="cert-logo-ca" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">
+                <img src="images/PA.png" alt="PA Certification" class="cert-logo-pa" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">
             </div>
 
             <p>&copy; 2025 PortfolioGuardian. All rights reserved.</p>

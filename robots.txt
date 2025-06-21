@@ -1,0 +1,26 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.portfolioguardian.com.au/sitemap.xml
+
+# Disallow sensitive areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /css/input.css
+Disallow: /package*.json
+Disallow: /tailwind.config.js
+Disallow: /postcss.config.js
+
+# Allow important pages
+Allow: /index.html
+Allow: /services.html
+Allow: /team.html
+Allow: /why-us.html
+Allow: /faq.html
+Allow: /contact.html
+Allow: /client-login.html
+Allow: /privacy-policy.html
+Allow: /thank-you.html 
