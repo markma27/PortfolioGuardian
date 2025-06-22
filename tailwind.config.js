@@ -8,8 +8,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'heading': ['Quicksand', 'sans-serif'],
-        'body': ['Montserrat', 'sans-serif'],
+        'heading': ['Poppins', 'sans-serif'],
+        'body': ['Poppins', 'sans-serif'],
       },
       colors: {
         'primary': {
