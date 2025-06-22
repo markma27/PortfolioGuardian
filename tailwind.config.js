@@ -9,7 +9,7 @@ module.exports = {
     extend: {
       fontFamily: {
         'heading': ['Poppins', 'sans-serif'],
-        'body': ['Poppins', 'sans-serif'],
+        'body': ['Montserrat', 'sans-serif'],
       },
       colors: {
         'primary': {
