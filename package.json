@@ -4,8 +4,7 @@
   "description": "Modern investment administration website",
   "scripts": {
     "dev": "npx tailwindcss -i ./css/input.css -o ./css/styles.css --watch",
-    "build": "npx tailwindcss -i ./css/input.css -o ./css/styles.css --minify",
-    "postinstall": "chmod +x ./node_modules/.bin/tailwindcss"
+    "build": "chmod +x ./node_modules/.bin/tailwindcss && npx tailwindcss -i ./css/input.css -o ./css/styles.css --minify"
   },
   "dependencies": {
     "autoprefixer": "^10.4.17",
