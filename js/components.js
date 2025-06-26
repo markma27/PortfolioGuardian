@@ -1,7 +1,7 @@
 // Component Loading Function
 function loadComponents() {
     // Load header
-    fetch('components/header.html')
+    fetch('/components/header.html')
         .then(response => response.text())
         .then(data => {
             document.querySelector('body').insertAdjacentHTML('afterbegin', data);
@@ -10,7 +10,7 @@ function loadComponents() {
         });
 
     // Load footer
-    fetch('components/footer.html')
+    fetch('/components/footer.html')
         .then(response => response.text())
         .then(data => {
             document.querySelector('body').insertAdjacentHTML('beforeend', data);
