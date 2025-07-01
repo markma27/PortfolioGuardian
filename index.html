@@ -98,13 +98,42 @@
                 <h1 class="text-5xl md:text-6xl lg:text-5xl font-bold mb-8">Your Easy Investment Support Solution</h1>
                 
                 <p class="text-xl md:text-2xl mb-8">Let us take care of your investment administration and reporting <br>
-                     while you focus on maximising returns                </p>
+                     while you focus on maximising returns</p>
                 <a href="/contact/" class="btn-primary text-lg">Get Started</a>
-
-
-
             </div>
         </section>
+
+        <!-- 添加预加载关键图片 -->
+        <link rel="preload" as="image" href="/images/background.jpg">
+        <link rel="preload" as="image" href="/images/logo.svg">
+        
+        <!-- 添加图片加载策略 -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // 懒加载图片
+                var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+                
+                if ("IntersectionObserver" in window) {
+                    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+                        entries.forEach(function(entry) {
+                            if (entry.isIntersecting) {
+                                let lazyImage = entry.target;
+                                lazyImage.src = lazyImage.dataset.src;
+                                if(lazyImage.dataset.srcset) {
+                                    lazyImage.srcset = lazyImage.dataset.srcset;
+                                }
+                                lazyImage.classList.remove("lazy");
+                                lazyImageObserver.unobserve(lazyImage);
+                            }
+                        });
+                    });
+                    
+                    lazyImages.forEach(function(lazyImage) {
+                        lazyImageObserver.observe(lazyImage);
+                    });
+                }
+            });
+        </script>
 
         <!-- Services Overview -->
         <section class="py-20 bg-light" itemscope itemtype="https://schema.org/Service">

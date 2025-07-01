@@ -36,6 +36,36 @@
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <!-- 添加图片加载优化的样式 -->
+    <style>
+        .lazy-image {
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .lazy-image.loaded {
+            opacity: 1;
+        }
+        .image-placeholder {
+            background: #f3f4f6;
+            position: relative;
+            overflow: hidden;
+        }
+        .image-placeholder::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: loading 1.5s infinite;
+        }
+        @keyframes loading {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+    </style>
 </head>
 <body class="min-h-screen bg-white" x-data="{ mobileMenuOpen: false }">
     <!-- Header will be loaded here by components.js -->
@@ -60,7 +90,7 @@
                 <!-- Team Member 1 -->
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform transition-shadow duration-200 hover:-translate-y-2 hover:shadow-xl fade-in team-member-card">
                     <div class="relative aspect-[3/2] max-h-[280px]">
-                        <img src="/images/phil-jaquillard.jpg" alt="Phil Jaquillard" class="w-full h-full object-cover object-center">
+                        <img src="/images/phil-jaquillard.jpg" alt="Phil Jaquillard" class="w-full h-full object-cover object-center lazy-image" data-src="/images/phil-jaquillard.jpg" data-srcset="/images/phil-jaquillard.jpg">
                         <div class="absolute bottom-0 left-0 right-0 bg-primary bg-opacity-90 p-2">
                             <div class="flex justify-center space-x-4">
                                 <a href="https://www.linkedin.com/in/phil-jaquillard-30528610/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-gray-200 transition-colors"><i class="fab fa-linkedin"></i></a>
@@ -78,7 +108,7 @@
                 <!-- Team Member 2 -->
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform transition-shadow duration-200 hover:-translate-y-2 hover:shadow-xl fade-in team-member-card">
                     <div class="relative aspect-[3/2] max-h-[280px]">
-                        <img src="/images/david-minns.jpg" alt="David Minns" class="w-full h-full object-cover object-center">
+                        <img src="/images/david-minns.jpg" alt="David Minns" class="w-full h-full object-cover object-center lazy-image" data-src="/images/david-minns.jpg" data-srcset="/images/david-minns.jpg">
                         <div class="absolute bottom-0 left-0 right-0 bg-primary bg-opacity-90 p-2">
                             <div class="flex justify-center space-x-4">
                                 <a href="https://www.linkedin.com/in/david-minns-05093938/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-gray-200 transition-colors"><i class="fab fa-linkedin"></i></a>
@@ -96,7 +126,7 @@
                 <!-- Team Member 3 -->
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform transition-shadow duration-200 hover:-translate-y-2 hover:shadow-xl fade-in team-member-card">
                     <div class="relative aspect-[3/2] max-h-[280px]">
-                        <img src="/images/mark-ma.jpg" alt="Mark Ma" class="w-full h-full object-cover object-center">
+                        <img src="/images/mark-ma.jpg" alt="Mark Ma" class="w-full h-full object-cover object-center lazy-image" data-src="/images/mark-ma.jpg" data-srcset="/images/mark-ma.jpg">
                         <div class="absolute bottom-0 left-0 right-0 bg-primary bg-opacity-90 p-2">
                             <div class="flex justify-center space-x-4">
                                 <a href="https://www.linkedin.com/in/markma922/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-gray-200 transition-colors"><i class="fab fa-linkedin"></i></a>
@@ -117,7 +147,7 @@
                 <!-- Team Member 4 -->
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform transition-shadow duration-200 hover:-translate-y-2 hover:shadow-xl fade-in fade-in-delay-1">
                     <div class="relative aspect-[3/2] max-h-[280px]">
-                        <img src="/images/mark-lane.jpg" alt="Mark Lane" class="w-full h-full object-cover object-center">
+                        <img src="/images/mark-lane.jpg" alt="Mark Lane" class="w-full h-full object-cover object-center lazy-image" data-src="/images/mark-lane.jpg" data-srcset="/images/mark-lane.jpg">
                         <div class="absolute bottom-0 left-0 right-0 bg-primary bg-opacity-90 p-2">
                             <div class="flex justify-center space-x-4">
                                 <a href="https://www.linkedin.com/in/mark-lane-jm/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-gray-200 transition-colors"><i class="fab fa-linkedin"></i></a>
@@ -138,7 +168,7 @@
                 <!-- Team Member 5 -->
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform transition-shadow duration-200 hover:-translate-y-2 hover:shadow-xl fade-in fade-in-delay-2">
                     <div class="relative aspect-[3/2] max-h-[280px]">
-                        <img src="/images/bryn-coudraye.jpg" alt="Bryn Coudraye" class="w-full h-full object-cover object-center">
+                        <img src="/images/bryn-coudraye.jpg" alt="Bryn Coudraye" class="w-full h-full object-cover object-center lazy-image" data-src="/images/bryn-coudraye.jpg" data-srcset="/images/bryn-coudraye.jpg">
                         <div class="absolute bottom-0 left-0 right-0 bg-primary bg-opacity-90 p-2">
                             <div class="flex justify-center space-x-4">
                                 <a href="https://www.linkedin.com/in/bryn-coudraye-34492486/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-gray-200 transition-colors"><i class="fab fa-linkedin"></i></a>
@@ -157,7 +187,7 @@
                 <!-- Team Member 6 -->
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform transition-shadow duration-200 hover:-translate-y-2 hover:shadow-xl fade-in fade-in-delay-3">
                     <div class="relative aspect-[3/2] max-h-[280px]">
-                        <img src="/images/megan-fong.jpg" alt="Megan Fong" class="w-full h-full object-cover object-center">
+                        <img src="/images/megan-fong.jpg" alt="Megan Fong" class="w-full h-full object-cover object-center lazy-image" data-src="/images/megan-fong.jpg" data-srcset="/images/megan-fong.jpg">
                         <div class="absolute bottom-0 left-0 right-0 bg-primary bg-opacity-90 p-2">
                             <div class="flex justify-center space-x-4">
                                 <a href="https://www.linkedin.com/in/megan-fongms/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-gray-200 transition-colors"><i class="fab fa-linkedin"></i></a>
@@ -175,7 +205,7 @@
                 <!-- Team Member 7 -->
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform transition-shadow duration-200 hover:-translate-y-2 hover:shadow-xl fade-in fade-in-delay-4">
                     <div class="relative aspect-[3/2] max-h-[280px]">
-                        <img src="/images/goran-vujasinovic.jpg" alt="Goran Vujasinovic" class="w-full h-full object-cover object-center">
+                        <img src="/images/goran-vujasinovic.jpg" alt="Goran Vujasinovic" class="w-full h-full object-cover object-center lazy-image" data-src="/images/goran-vujasinovic.jpg" data-srcset="/images/goran-vujasinovic.jpg">
                         <div class="absolute bottom-0 left-0 right-0 bg-primary bg-opacity-90 p-2">
                             <div class="flex justify-center space-x-4">
                                 <a href="https://www.linkedin.com/in/goran-vujasinovic-b49867215/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-gray-200 transition-colors"><i class="fab fa-linkedin"></i></a>
@@ -196,7 +226,7 @@
                 <!-- Team Member 8 -->
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform transition-shadow duration-200 hover:-translate-y-2 hover:shadow-xl fade-in fade-in-delay-5">
                     <div class="relative aspect-[3/2] max-h-[280px]">
-                        <img src="/images/greggie-sanchez.jpg" alt="Greggie Sanchez" class="w-full h-full object-cover object-center">
+                        <img src="/images/greggie-sanchez.jpg" alt="Greggie Sanchez" class="w-full h-full object-cover object-center lazy-image" data-src="/images/greggie-sanchez.jpg" data-srcset="/images/greggie-sanchez.jpg">
                         <div class="absolute bottom-0 left-0 right-0 bg-primary bg-opacity-90 p-2">
                             <div class="flex justify-center space-x-4">
                                 <a href="https://www.linkedin.com/in/greggie-jay-sanchez-1033aa259/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-gray-200 transition-colors"><i class="fab fa-linkedin"></i></a>
@@ -229,5 +259,56 @@
 
     <script src="/js/components.js"></script>
     <script src="/js/main.js"></script>
+    
+    <!-- 团队成员图片加载优化 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 创建Intersection Observer
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        // 加载原始图片
+                        const originalSrc = img.dataset.src;
+                        const originalSrcset = img.dataset.srcset;
+                        
+                        if (originalSrc) {
+                            img.src = originalSrc;
+                        }
+                        if (originalSrcset) {
+                            img.srcset = originalSrcset;
+                        }
+                        
+                        // 图片加载完成后显示
+                        img.onload = function() {
+                            img.classList.add('loaded');
+                            const placeholder = img.closest('.image-placeholder');
+                            if (placeholder) {
+                                placeholder.classList.remove('image-placeholder');
+                            }
+                        };
+                        
+                        // 停止观察这个元素
+                        observer.unobserve(img);
+                    }
+                });
+            }, {
+                rootMargin: '50px 0px', // 提前50px开始加载
+                threshold: 0.01
+            });
+            
+            // 获取所有需要懒加载的图片
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                // 添加占位符和加载动画
+                const wrapper = document.createElement('div');
+                wrapper.className = 'image-placeholder';
+                img.parentNode.insertBefore(wrapper, img);
+                wrapper.appendChild(img);
+                
+                // 开始观察
+                imageObserver.observe(img);
+            });
+        });
+    </script>
 </body>
 </html> 

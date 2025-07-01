@@ -1,9 +1,34 @@
 # Basic Security Headers
 <IfModule mod_headers.c>
-    Header always set X-Content-Type-Options nosniff
-    Header always set X-Frame-Options DENY
+    # Strict Transport Security: 强制HTTPS连接
+    Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+    
+    # Content Security Policy: 控制资源加载
+    Header always set Content-Security-Policy "default-src 'self'; \
+        script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://unpkg.com https://cdnjs.cloudflare.com; \
+        style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; \
+        img-src 'self' data: https:; \
+        font-src 'self' https://cdnjs.cloudflare.com; \
+        connect-src 'self' https://www.google-analytics.com; \
+        frame-ancestors 'none'; \
+        form-action 'self'; \
+        base-uri 'self'; \
+        object-src 'none'"
+    
+    # 防止MIME类型嗅探攻击
+    Header always set X-Content-Type-Options "nosniff"
+    
+    # 防止点击劫持
+    Header always set X-Frame-Options "DENY"
+    
+    # 启用XSS过滤器
     Header always set X-XSS-Protection "1; mode=block"
+    
+    # 控制引用策略
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # 权限策略
+    Header always set Permissions-Policy "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()"
 </IfModule>
 
 # Enable compression
@@ -14,20 +39,65 @@
     AddOutputFilterByType DEFLATE application/javascript
     AddOutputFilterByType DEFLATE application/json
     AddOutputFilterByType DEFLATE image/svg+xml
+    AddOutputFilterByType DEFLATE image/x-icon
+    AddOutputFilterByType DEFLATE image/webp
 </IfModule>
 
 # Browser caching
 <IfModule mod_expires.c>
     ExpiresActive On
-    ExpiresByType text/css "access plus 1 month"
-    ExpiresByType application/javascript "access plus 1 month"
+    
+    # 默认缓存时间
+    ExpiresDefault "access plus 1 month"
+    
+    # HTML文档
+    ExpiresByType text/html "access plus 1 week"
+    
+    # 数据
+    ExpiresByType text/xml "access plus 1 day"
+    ExpiresByType application/xml "access plus 1 day"
+    ExpiresByType application/json "access plus 1 day"
+    
+    # RSS订阅
+    ExpiresByType application/rss+xml "access plus 1 hour"
+    
+    # 网站图标
+    ExpiresByType image/x-icon "access plus 1 year"
+    
+    # 媒体文件
+    ExpiresByType image/gif "access plus 1 year"
     ExpiresByType image/png "access plus 1 year"
     ExpiresByType image/jpg "access plus 1 year"
     ExpiresByType image/jpeg "access plus 1 year"
-    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
     ExpiresByType image/svg+xml "access plus 1 year"
-    ExpiresByType text/html "access plus 1 week"
+    ExpiresByType image/avif "access plus 1 year"
+    
+    # CSS和JavaScript
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType text/javascript "access plus 1 year"
+    
+    # 字体文件
+    ExpiresByType application/font-woff "access plus 1 year"
+    ExpiresByType application/font-woff2 "access plus 1 year"
+    ExpiresByType application/x-font-ttf "access plus 1 year"
+    ExpiresByType application/x-font-opentype "access plus 1 year"
+    ExpiresByType application/vnd.ms-fontobject "access plus 1 year"
 </IfModule>
+
+# 启用Keep-Alive
+<IfModule mod_headers.c>
+    Header set Connection keep-alive
+</IfModule>
+
+# 图片防盗链（可选，根据需要启用）
+#<IfModule mod_rewrite.c>
+#    RewriteEngine on
+#    RewriteCond %{HTTP_REFERER} !^$
+#    RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?portfolioguardian.com.au [NC]
+#    RewriteRule \.(jpg|jpeg|png|gif|webp)$ - [NC,F,L]
+#</IfModule>
 
 # Prevent access to sensitive files
 <IfModule mod_rewrite.c>
