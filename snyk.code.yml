@@ -8,6 +8,7 @@ exclude:
   - node_modules/fastq/test/**
   - node_modules/tailwindcss/lib/lib/cacheInvalidation.js
   - node_modules/tailwindcss/src/lib/cacheInvalidation.js
+  - node_modules/browserslist/cli.js
   # 排除构建产物
   - dist/**
   - build/**
