@@ -1,11 +1,15 @@
-# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+# Snyk (https://snyk.io) policy file
+# 此文件用于 Snyk Open Source（依赖扫描）
+# 对于 Snyk Code（代码分析）漏洞，请在 Snyk Web UI 中手动忽略
+
 version: v1.28.0
-# 忽略 node_modules 中 browserslist CLI 工具的 Path Traversal 漏洞
-# 这是开发工具脚本，不会在生产环境运行
+
+# 忽略 browserslist 的 Path Traversal 漏洞（CWE-23）
+# 这是 CLI 工具脚本，不会在生产环境运行
 ignore:
   '*':
-    - node_modules/browserslist/cli.js:
-        reason: Third-party CLI tool script in node_modules, not production code. This is a development tool used by autoprefixer.
+    - 'node_modules/browserslist/cli.js > Path Traversal':
+        reason: 'Third-party CLI tool script in node_modules, not production code. This is a development tool used by autoprefixer.'
         expires: '2026-12-31T23:59:59.000Z'
         paths:
           - '**/node_modules/browserslist/cli.js'
