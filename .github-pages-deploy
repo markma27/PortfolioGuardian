@@ -1,0 +1,4 @@
+# Deployment Marker
+This file is used to trigger GitHub Pages redeployment.
+Last updated: $(Get-Date -Format "yyyy-MM-dd HH:mm:ss")
+
