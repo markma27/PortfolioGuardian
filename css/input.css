@@ -25,6 +25,23 @@
     @apply inline-block px-6 py-3 border-2 border-primary text-primary font-semibold rounded-lg transition-all hover:bg-primary hover:text-white;
   }
 
+  /* Header CTAs: same size, no border; Get Started = primary green, Client Login = theme grey */
+  .header-nav-cta {
+    @apply box-border inline-flex items-center justify-center shrink-0 whitespace-nowrap w-[150px] h-12 px-4 py-0 rounded-lg font-semibold border-0 transition-all;
+  }
+
+  .header-nav-cta-start {
+    @apply bg-primary text-white hover:bg-primary-dark hover:shadow-lg;
+  }
+
+  .header-nav-cta-login {
+    @apply bg-neutral text-white hover:bg-neutral-dark;
+  }
+
+  .header-nav-cta-mobile {
+    @apply box-border flex w-full items-center justify-center whitespace-nowrap h-12 px-4 py-0 rounded-lg font-semibold border-0 transition-all;
+  }
+
   .nav-link {
     @apply text-dark hover:text-primary transition-colors relative;
   }

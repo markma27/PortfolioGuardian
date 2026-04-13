@@ -1,4 +1,6 @@
 {
   "liveServer.settings.port": 5501,
-  "css.lint.unknownAtRules": "ignore"
+  "css.lint.unknownAtRules": "ignore",
+  "snyk.advanced.organization": "57998831-9637-4b34-9077-9d371347bc8b",
+  "snyk.advanced.autoSelectOrganization": true
 }

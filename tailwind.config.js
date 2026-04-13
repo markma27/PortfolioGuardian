@@ -23,6 +23,10 @@ module.exports = {
         },
         'dark': '#333333',
         'light': '#f5f5f5',
+        'neutral': {
+          DEFAULT: '#6b7280',
+          dark: '#4b5563',
+        },
       },
       container: {
         center: true,
