@@ -4,11 +4,15 @@
   "description": "Modern investment administration website",
   "scripts": {
     "dev": "npx tailwindcss -i ./css/input.css -o ./css/styles.css --watch",
-    "build": "chmod +x ./node_modules/.bin/tailwindcss && npx tailwindcss -i ./css/input.css -o ./css/styles.css --minify"
+    "build": "chmod +x ./node_modules/.bin/tailwindcss && npx tailwindcss -i ./css/input.css -o ./css/styles.css --minify",
+    "postinstall": "node -e \"const fs=require('fs'),p=require('path');fs.copyFileSync(require.resolve('dompurify/dist/purify.min.js'),p.join(process.cwd(),'js','purify.min.js'))\""
   },
   "devDependencies": {
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.10",
     "tailwindcss": "^4.1.16"
+  },
+  "dependencies": {
+    "dompurify": "^3.4.1"
   }
 }

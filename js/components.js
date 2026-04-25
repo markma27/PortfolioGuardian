@@ -1,20 +1,34 @@
 // Component Loading Function
-function loadComponents() {
-    // Load header
-    fetch('/components/header.html')
-        .then(response => response.text())
-        .then(data => {
-            document.querySelector('body').insertAdjacentHTML('afterbegin', data);
-            // Initialize mobile menu after header is loaded
-            initializeMobileMenu();
-        });
+function loadDOMPurify() {
+    if (window.DOMPurify) {
+        return Promise.resolve(window.DOMPurify);
+    }
+    return new Promise((resolve, reject) => {
+        const s = document.createElement('script');
+        s.src = '/js/purify.min.js';
+        s.onload = () => resolve(window.DOMPurify);
+        s.onerror = () => reject(new Error('Failed to load DOMPurify'));
+        document.head.appendChild(s);
+    });
+}
 
-    // Load footer
-    fetch('/components/footer.html')
-        .then(response => response.text())
-        .then(data => {
-            document.querySelector('body').insertAdjacentHTML('beforeend', data);
-        });
+function loadComponents() {
+    loadDOMPurify().then((DOMPurify) => {
+        const safeHtml = (html) => DOMPurify.sanitize(html);
+
+        fetch('/components/header.html')
+            .then(response => response.text())
+            .then((data) => {
+                document.querySelector('body').insertAdjacentHTML('afterbegin', safeHtml(data));
+                initializeMobileMenu();
+            });
+
+        fetch('/components/footer.html')
+            .then(response => response.text())
+            .then((data) => {
+                document.querySelector('body').insertAdjacentHTML('beforeend', safeHtml(data));
+            });
+    });
 }
 
 // Initialize mobile menu functionality
