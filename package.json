@@ -8,11 +8,11 @@
     "postinstall": "node -e \"const fs=require('fs'),p=require('path');fs.copyFileSync(require.resolve('dompurify/dist/purify.min.js'),p.join(process.cwd(),'js','purify.min.js'))\""
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.21",
-    "postcss": "^8.5.23",
-    "tailwindcss": "^4.1.16"
+    "autoprefixer": "^10.5.5",
+    "postcss": "^8.5.28",
+    "tailwindcss": "^4.3.3"
   },
   "dependencies": {
-    "dompurify": "^3.4.12"
+    "dompurify": "^3.4.15"
   }
 }
